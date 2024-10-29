@@ -82,7 +82,7 @@ def consume_packet(out_qs):
                 # print("Received last packet")
                 break
 
-def sppfio(inpq, outqs, rank, avg_inv, num_qs, avg_inv_per_rank):
+def hppifo(inpq, outqs, rank, avg_inv, num_qs, avg_inv_per_rank):
     # TODO: put packet in designated Q
     # Bounds are reversed. 1st bound is for lowest priority q, last bound is for highest priority q
     bounds = [0 for _ in range(num_qs)]
@@ -143,9 +143,9 @@ if __name__ == "__main__":
 
                 packet_generator = mp.Process(target=generate_packet, args=(inp_q, DIST_TYPE, max_rank))
                 packet_consumer = mp.Process(target=consume_packet, args=(out_qs, ))
-                sp_pifo_proc = mp.Process(target=sppfio, args=(inp_q, out_qs, max_rank, avg_inv, num_qs, avg_inv_per_rank))
+                hp_pifo_proc = mp.Process(target=hppifo, args=(inp_q, out_qs, max_rank, avg_inv, num_qs, avg_inv_per_rank))
 
-                sp_pifo_proc.start()
+                hp_pifo_proc.start()
                 packet_generator.start()
                 packet_consumer.start()
 

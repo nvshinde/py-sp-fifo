@@ -1,4 +1,4 @@
-# Implements HP-PIFO algorithm in python to check inversions. 
+# Implements SP-PIFO algorithm in python to check inversions. 
 # Compares with heirarchial PIFO in python to compare inversions with SP-PIFO
 
 #!/usr/bin/env
@@ -20,7 +20,7 @@ MAX_RANKS = [10, 20, 40, 80, 160, 320, 640, 1000]
 DIST_TYPE = "pois"
 
 MAX_PACKETS = 100000
-ITERATIONS = 1
+ITERATIONS = 10
 
 class Packet:
     def __init__(self, rank, id) -> None:
