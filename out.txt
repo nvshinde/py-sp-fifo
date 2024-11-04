@@ -1,0 +1,1 @@
+Num S1 Qs, Num S2 Qs, Max Rank, S1 Norm. Mean Inversions, S2 Norm. Mean Inversions

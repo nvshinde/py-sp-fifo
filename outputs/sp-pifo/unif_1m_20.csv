@@ -1,0 +1,5 @@
+Num Qs, Max Rank, Norm. Mean Inversions
+2, 20, 0.447
+4, 20, 0.395
+8, 20, 0.290
+16, 20, 0.079
